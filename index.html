@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motapothula Sai Kiran — UI/UX Designer</title>
+<meta name="description" content="Sai Kiran — UI/UX Designer with 5.8 years of experience designing healthcare, insurance, and hospital-marketing software.">
+
+<!--
+  ============================================================
+  HOW TO UPDATE THIS SITE LATER
+  ============================================================
+  1) PROJECT SCREENSHOTS
+     Find each <div class="shot-placeholder"> and replace with:
+       <img src="images/your-screenshot.png" alt="Screen name">
+     Put image files in an /images folder next to this file.
+
+  2) GITHUB / LINKEDIN
+     Search for [GITHUB_URL] and [LINKEDIN_URL] (footer + hero
+     buttons) and replace with your real links. Delete the
+     LinkedIn line entirely if you don't have one yet.
+
+  3) FIGMA WORKS LINK
+     The "Figma Works" buttons already link to your Figma file:
+     https://www.figma.com/design/RgGfw0H7QKpu0ZFk1scXBt/Saikiran-UI-UX-Protofolio
+     If you update the Figma file's share link later, search for
+     "figma.com/design/RgGfw0H7QKpu0ZFk1scXBt" in this file and
+     replace it in all 3 spots (header, hero, footer).
+
+  4) DEPLOY ON GITHUB PAGES
+     - Create a repo named  yourusername.github.io
+     - Add this file as  index.html, plus an /images folder,
+       to that repo's root
+     - Push to main — live at https://yourusername.github.io
+  ============================================================
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg:#F6F8F7; --bg-panel:#FFFFFF;
+    --ink:#16232A; --ink-soft:#4C5A60;
+    --line:#DCE6E4;
+    --teal:#1F4E5F; --teal-deep:#153842;
+    --amber:#D9932F; --amber-soft:#F3E3C6;
+    --radius:14px; --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'IBM Plex Sans',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; color:var(--ink); margin:0; letter-spacing:-0.01em;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal); display:flex; align-items:center; gap:8px;}
+  .eyebrow::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--amber); display:inline-block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  section{padding:46px 0;}
+  @media (max-width:640px){ section{padding:64px 0;} }
+
+  header{position:sticky; top:0; z-index:50; background:rgba(246,248,247,0.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav{max-width:var(--maxw); margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .avatar{width:38px; height:38px; border-radius:10px; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:600; font-size:0.95rem; flex:none;}
+  .brand-text b{display:block; font-family:'Fraunces',serif; font-weight:600; font-size:1rem; line-height:1.1;}
+  .brand-text span{display:block; font-size:0.72rem; color:var(--ink-soft); letter-spacing:0.03em;}
+  .navlinks{display:flex; gap:24px; align-items:center; font-size:0.9rem;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
+  .navlinks a:hover{color:var(--teal);}
+  @media (max-width:760px){ .navlinks a:not(.btn){display:none;} }
+
+  .btn{font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:0.88rem; padding:10px 18px; border-radius:999px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1px solid transparent; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; white-space:nowrap;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--teal); color:#fff !important;}
+  .btn-primary:hover{box-shadow:0 8px 20px -8px rgba(31,78,95,0.55);}
+  .btn-ghost{background:transparent; color:var(--teal); border-color:var(--teal);}
+  .btn-ghost:hover{background:var(--teal); color:#fff;}
+  .btn-amber{background:var(--amber); color:#3A2A05;}
+  .btn-amber:hover{box-shadow:0 8px 20px -8px rgba(217,147,47,0.6);}
+  .btn svg{width:15px; height:15px;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:80px 0 20px;}
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{font-size:clamp(2rem,4.4vw,3.1rem); line-height:1.1; margin-bottom:20px; max-width:16ch;}
+  .hero p.lead{font-size:1.05rem; color:var(--ink-soft); max-width:68ch; margin-bottom:30px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:56px;}
+  .stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stat-cell{padding:26px 20px; border-right:1px solid var(--line);}
+  .stat-cell:last-child{border-right:none;}
+  @media (max-width:700px){ .stats-row{grid-template-columns:repeat(2,1fr);} .stat-cell:nth-child(2){border-right:none;} .stat-cell{border-bottom:1px solid var(--line);} }
+  .stat-num{font-family:'Fraunces',serif; font-size:2.1rem; font-weight:600; color:var(--teal); line-height:1;}
+  .stat-label{font-size:0.78rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; margin-top:6px;}
+
+  .quote{padding:56px 0 0; text-align:center;}
+  .quote blockquote{font-family:'Fraunces',serif; font-style:italic; font-size:clamp(1.1rem,2vw,1.5rem); max-width:44ch; margin:0 auto 14px; color:var(--ink); line-height:1.4;}
+  .quote cite{font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--ink-soft); font-style:normal; letter-spacing:0.05em;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+  .about-grid h2{font-size:1.9rem; margin-bottom:18px;}
+  .about-grid > div > p{color:var(--ink-soft); font-size:1.02rem;}
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;}
+  .pill{font-size:0.8rem; padding:6px 13px; border-radius:999px; background:var(--amber-soft); color:#7A5A17; font-family:'IBM Plex Mono',monospace;}
+
+  .toolkit-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px;}
+  .toolkit-head span{font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--ink-soft);}
+  .toolkit{display:grid; gap:12px;}
+  .toolkit-row{background:var(--bg-panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px;}
+  .toolkit-row-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  .toolkit-row-top b{font-size:0.92rem;}
+  .toolkit-row-top span{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; background:var(--bg); border:1px solid var(--line); padding:2px 9px; border-radius:999px; color:var(--ink-soft);}
+  .toolkit-row p{margin:0; font-size:0.86rem; color:var(--ink-soft);}
+
+  /* ---------- Experience timeline ---------- */
+  .timeline{display:grid; gap:22px;}
+  .timeline-item{display:grid; grid-template-columns:52px 1fr; gap:18px;}
+  .tl-badge{width:52px; height:52px; border-radius:50%; background:var(--teal-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem;}
+  .tl-card{background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px 26px;}
+  .tl-tag{display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; background:var(--amber-soft); color:#7A5A17; padding:3px 9px; border-radius:6px; margin-bottom:10px;}
+  .tl-top{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:4px;}
+  .tl-top h3{font-size:1.1rem;}
+  .tl-top span.meta{font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--ink-soft);}
+  .tl-company{font-size:0.88rem; color:var(--ink-soft); margin-bottom:10px;}
+  .tl-card ul{margin:0 0 14px; padding-left:20px; color:var(--ink-soft); font-size:0.93rem;}
+  .tl-card li{margin-bottom:5px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:7px;}
+  .tag{font-size:0.76rem; font-family:'IBM Plex Mono',monospace; background:var(--bg); border:1px solid var(--line); color:var(--ink-soft); padding:4px 9px; border-radius:6px;}
+
+  /* ---------- Projects ---------- */
+  .project{background:var(--bg-panel); border:1px solid var(--line); border-radius:20px; padding:30px; margin-bottom:26px;}
+  .project.flagship{border-color:var(--amber); box-shadow:0 0 0 1px var(--amber) inset;}
+  .flag-tag{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:#7A5A17; background:var(--amber-soft); padding:3px 10px; border-radius:6px; display:inline-block; margin-bottom:10px;}
+  .project-head{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; margin-bottom:8px;}
+  .project-head h3{font-size:1.3rem;}
+  .project-domain{font-size:0.82rem; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;}
+  .project p.desc{color:var(--ink-soft); margin:12px 0 18px; max-width:75ch;}
+  .project-shots{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:18px;}
+  @media (max-width:700px){ .project-shots{grid-template-columns:1fr;} }
+  .shot-placeholder{aspect-ratio:16/10; border:1.5px dashed var(--line); border-radius:12px; background:repeating-linear-gradient(135deg, rgba(31,78,95,0.035) 0 12px, transparent 12px 24px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:var(--ink-soft); text-align:center; padding:14px;}
+  .shot-placeholder svg{width:28px; height:28px; opacity:0.55;}
+  .shot-placeholder span{font-size:0.76rem; font-family:'IBM Plex Mono',monospace;}
+  .project-tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .project ul.points{margin:0; padding-left:20px; color:var(--ink-soft); font-size:0.94rem;}
+  .project ul.points li{margin-bottom:6px;}
+
+  /* ---------- Achievements ---------- */
+  .ach-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:40px;}
+  @media (max-width:760px){ .ach-grid{grid-template-columns:1fr;} }
+  .ach-num-card{background:var(--teal-deep); color:#fff; border-radius:16px; padding:26px 22px;}
+  .ach-num-card .stat-num{color:var(--amber); font-size:2.2rem;}
+  .ach-num-card .stat-label{color:#B9D3D9;}
+  .ach-detail-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  @media (max-width:860px){ .ach-detail-grid{grid-template-columns:1fr;} }
+  .ach-card{background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px;}
+  .ach-card h4{font-family:'Fraunces',serif; font-weight:600; font-size:1.02rem; margin-bottom:8px;}
+  .ach-card p{margin:0; font-size:0.88rem; color:var(--ink-soft);}
+
+  .edu-list{list-style:none; margin:0; padding:0; display:grid; gap:12px;}
+  .edu-list li{background:var(--bg-panel); border:1px solid var(--line); border-radius:10px; padding:14px 18px; font-size:0.94rem; color:var(--ink-soft);}
+
+  /* ---------- Contact / Footer ---------- */
+  footer{background:var(--teal-deep); color:#fff; padding:72px 0 0;}
+  footer h2{color:#fff; font-size:2rem; max-width:20ch;}
+  footer p.lead2{color:#C9DDE1; max-width:52ch;}
+  .footer-actions{display:flex; gap:14px; margin:26px 0 60px; flex-wrap:wrap;}
+  .footer-cols{display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:30px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.15);}
+  @media (max-width:760px){ .footer-cols{grid-template-columns:1fr 1fr;} }
+  .footer-cols h5{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:#8FB6BD; margin-bottom:14px;}
+  .footer-cols ul{list-style:none; margin:0; padding:0; display:grid; gap:9px; font-size:0.88rem;}
+  .footer-cols ul a{text-decoration:none; color:#DCEAEC;}
+  .footer-cols ul a:hover{text-decoration:underline;}
+  .footer-brand .avatar{background:var(--amber); color:#3A2A05;}
+  .footer-brand{display:flex; gap:12px; align-items:flex-start; margin-bottom:10px;}
+  .footer-brand p{font-size:0.85rem; color:#B9D3D9; max-width:34ch; margin:0;}
+  .footer-bottom{padding:22px 0 34px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.8rem; color:#9FC0C6;}
+  .footer-bottom a{text-decoration:underline; text-underline-offset:2px;}
+
+  /* ---------- Scroll progress bar ---------- */
+  #progress-bar{position:fixed; top:0; left:0; height:3px; width:0%; z-index:200; background:linear-gradient(90deg, var(--teal), var(--amber)); transition:width 0.08s linear;}
+
+  /* ---------- Custom cursor (desktop, motion-ok only) ---------- */
+  @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+    body.cursor-ready, body.cursor-ready a, body.cursor-ready button{cursor:none;}
+    #cursor-dot, #cursor-ring{position:fixed; top:0; left:0; z-index:300; pointer-events:none; border-radius:50%; will-change:transform;}
+    #cursor-dot{width:7px; height:7px; background:var(--amber); transform:translate(-50%,-50%);}
+    #cursor-ring{width:34px; height:34px; border:1.5px solid rgba(31,78,95,0.45); transform:translate(-50%,-50%); transition:width .18s ease, height .18s ease, border-color .18s ease;}
+    #cursor-ring.hovering{width:50px; height:50px; border-color:var(--amber);}
+  }
+  #cursor-dot, #cursor-ring{display:none;}
+  @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+    body.cursor-ready #cursor-dot, body.cursor-ready #cursor-ring{display:block;}
+  }
+
+  /* ---------- Gradient wash + wave divider (hero zone) ---------- */
+  .gradient-zone{position:relative; overflow:hidden; padding-bottom:70px;
+    background:
+      radial-gradient(600px 380px at 15% -10%, rgba(31,78,95,0.14), transparent 60%),
+      radial-gradient(560px 360px at 100% 10%, rgba(217,147,47,0.16), transparent 60%),
+      #EAF2F1;
+  }
+  .blob{position:absolute; border-radius:50%; filter:blur(60px); opacity:0.55; pointer-events:none;}
+  .blob-a{width:420px; height:420px; background:radial-gradient(circle, rgba(31,78,95,0.22), transparent 70%); top:-140px; left:-120px; animation:float-a 16s ease-in-out infinite;}
+  .blob-b{width:360px; height:360px; background:radial-gradient(circle, rgba(217,147,47,0.22), transparent 70%); top:40px; right:-100px; animation:float-b 18s ease-in-out infinite;}
+  @keyframes float-a{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(30px,40px);} }
+  @keyframes float-b{ 0%,100%{transform:translate(0,0);} 50%{transform:translate(-25px,30px);} }
+  @media (prefers-reduced-motion:reduce){ .blob-a,.blob-b{animation:none;} }
+  .wave-divider{position:absolute; left:0; right:0; bottom:-1px; line-height:0;}
+  .wave-divider svg{width:100%; height:70px; display:block;}
+  .hero-layout{display:flex; flex-wrap:wrap; gap:40px; align-items:center;}
+  .hero-layout > div:first-child{flex:1 1 480px;}
+  .hero-layout > .orbit-visual{flex:1 1 360px;}
+  @media (max-width:900px){ .hero-layout{flex-direction:column;} .hero-layout > .orbit-visual{flex:none; width:100%;} }
+
+  /* ---------- Orbit visual ---------- */
+  .orbit-visual{position:relative; width:100%; max-width:420px; min-height:380px; aspect-ratio:1/1; margin:30px auto 60px;}
+  .orbit-ring{position:absolute; top:6%; left:6%; right:6%; bottom:6%; border-radius:50%; border:1.5px dashed rgba(31,78,95,0.28);}
+  .orbit-badge{position:absolute; top:-6px; left:4%; width:44px; height:44px; border-radius:50%; border:1.5px solid var(--amber); background:var(--bg-panel); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px -6px rgba(31,78,95,0.25);}
+  .orbit-badge span{width:7px; height:7px; border-radius:50%; background:var(--amber);}
+  .orbit-dot{position:absolute; bottom:8%; left:44%; width:9px; height:9px; border-radius:50%; background:var(--amber); box-shadow:0 0 0 4px rgba(217,147,47,0.18);}
+  .sphere{position:absolute; top:16%; left:16%; right:16%; bottom:16%; border-radius:50%;
+    background-color:var(--teal);
+    background-image:
+      radial-gradient(circle at 32% 28%, rgba(255,255,255,0.55), rgba(255,255,255,0) 32%),
+      conic-gradient(from 220deg, var(--teal-deep), var(--teal) 35%, var(--amber) 68%, var(--teal-deep) 100%);
+    box-shadow:0 30px 60px -20px rgba(21,56,66,0.45), inset 0 0 40px rgba(0,0,0,0.15);
+    animation:spin-slow 22s linear infinite;
+  }
+  .sphere::after{content:""; position:absolute; top:8%; left:8%; right:8%; bottom:8%; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(255,255,255,0.35), transparent 55%);}
+  @keyframes spin-slow{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
+  @media (prefers-reduced-motion:reduce){ .sphere{animation:none;} }
+
+  .float-card{position:absolute; background:var(--bg-panel); border:1px solid var(--line); border-radius:14px; padding:14px 18px; box-shadow:0 14px 30px -14px rgba(21,56,66,0.25); z-index:2;}
+  .float-card .stat-num{font-size:1.5rem;}
+  .float-card .stat-label{font-size:0.68rem; margin-top:2px;}
+  .fc-tl{top:8%; left:-6%;}
+  .fc-tr{top:14%; right:-10%;}
+  .fc-bl{bottom:10%; left:-10%;}
+  .fc-br{bottom:2%; right:-6%;}
+  @media (max-width:520px){
+    .fc-tl,.fc-tr,.fc-bl,.fc-br{padding:9px 12px;}
+    .float-card .stat-num{font-size:1.15rem;}
+    .fc-tl{left:0;} .fc-tr{right:0;} .fc-bl{left:0;} .fc-br{right:0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="avatar">SK</div>
+      <div class="brand-text"><b>Sai Kiran</b><span>UI/UX &amp; Front-End</span></div>
+    </div>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="Motapothula_Sai_Kiran_UIUX_Resume_Updated.docx" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+        Download resume
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div id="progress-bar"></div>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<div class="gradient-zone">
+<div class="blob blob-a"></div>
+<div class="blob blob-b"></div>
+<section class="hero">
+  <div class="wrap hero-layout">
+    <div>
+      <span class="eyebrow">UI/UX Designer · Hyderabad, India</span>
+      <h1>UI/UX design and healthcare-focused front-end engineering.</h1>
+      <p class="lead">I'm <b>Motapothula Sai Kiran</b>. Over 5.8 years I've designed and helped implement responsive interfaces for healthcare, insurance and hospital-marketing platforms — from Figma file to working screens in HTML5, CSS3, Bootstrap and PrimeNG.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">View my work</a>
+        <a class="btn btn-ghost" href="https://www.figma.com/design/RgGfw0H7QKpu0ZFk1scXBt/Saikiran-UI-UX-Protofolio?node-id=2-2&p=f&t=HqgGMnn38933mZQ9-0" target="_blank" rel="noopener">Figma Works</a>
+        <!-- Replace [GITHUB_URL] with your GitHub profile link -->
+        <a class="btn btn-ghost" href="[GITHUB_URL]" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="orbit-visual">
+      <div class="orbit-badge"><span></span></div>
+      <div class="orbit-ring"></div>
+      <div class="orbit-dot"></div>
+      <div class="sphere"></div>
+      <div class="float-card fc-tl"><div class="stat-num">5.8+</div><div class="stat-label">YEARS EXP.</div></div>
+      <div class="float-card fc-tr"><div class="stat-num">3+</div><div class="stat-label">PLATFORMS</div></div>
+      <div class="float-card fc-bl"><div class="stat-num">29+</div><div class="stat-label">SKILLS</div></div>
+      <div class="float-card fc-br"><div class="stat-num">2021</div><div class="stat-label">SINCE</div></div>
+    </div>
+  </div>
+  <div class="wrap quote">
+    <blockquote>"A hospital screen succeeds the moment a nurse or a patient finishes the task without ever thinking about the screen itself."</blockquote>
+    <cite>— Design philosophy</cite>
+  </div>
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,40 C360,110 1080,-20 1440,50 L1440,100 L0,100 Z" style="fill:var(--bg)"/>
+    </svg>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About</span>
+      <h2 style="margin-top:14px;">Healthcare has strict rules. The interface still has to feel simple.</h2>
+      <p>I specialize in <b>user flows, wireframing, high-fidelity UI and design systems</b> for healthcare, insurance and hospital-marketing software. My work spans an employee health-benefits portal for <b>NFC (Nuclear Fuel Complex)</b>, a patient-facing portal for <b>MRR</b>, and a hospital-marketing mobile app for <b>GROH</b> — all at Suvarna Technosoft.</p>
+      <p style="margin-top:14px;">I move between design and implementation: sketching flows and screens in Figma, then converting approved designs into responsive interfaces myself using HTML5, CSS3, Bootstrap and PrimeNG, with basic Angular knowledge to stay aligned with development teams.</p>
+      <div class="pill-row">
+        <span class="pill">Responsive Design</span><span class="pill">Design Systems</span>
+        <span class="pill">Healthcare UX</span><span class="pill">Component-Based UI</span>
+        <span class="pill">Cross-Browser</span>
+      </div>
+    </div>
+    <div>
+      <div class="toolkit-head">
+        <b style="font-family:'Fraunces',serif; font-size:1.05rem;">Toolkit breakdown</b>
+        <span>29 skills across 5 areas</span>
+      </div>
+      <div class="toolkit">
+        <div class="toolkit-row">
+          <div class="toolkit-row-top"><b>UX / Product Design</b><span>6</span></div>
+          <p>User-Centered Design, User Flows, Information Architecture, Wireframing, Prototyping, Interaction Design</p>
+        </div>
+        <div class="toolkit-row">
+          <div class="toolkit-row-top"><b>UI / Visual Design</b><span>6</span></div>
+          <p>Responsive Design, Mobile App Design, Design Systems, Component-Based UI, Typography, Visual Hierarchy</p>
+        </div>
+        <div class="toolkit-row">
+          <div class="toolkit-row-top"><b>Design Tools</b><span>4</span></div>
+          <p>Figma, Adobe XD, Illustrator, Balsamiq</p>
+        </div>
+        <div class="toolkit-row">
+          <div class="toolkit-row-top"><b>Front-End Technologies</b><span>5</span></div>
+          <p>HTML5, CSS3, Bootstrap 3/4/5, PrimeNG 10/17/18/19, Angular (Basic)</p>
+        </div>
+        <div class="toolkit-row">
+          <div class="toolkit-row-top"><b>Collaboration &amp; Quality</b><span>8</span></div>
+          <p>Requirement Analysis, Stakeholder Collaboration, Design Handoff, UI Validation, Cross-Browser Compatibility, Accessibility, Jira, GitHub</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <span class="eyebrow">Experience</span>
+    <h2 style="margin:14px 0 30px; font-size:1.9rem;">Where I've worked</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-badge">S</div>
+        <div class="tl-card">
+          <span class="tl-tag">Current role</span>
+          <div class="tl-top"><h3>Web Designer</h3><span class="meta">Jan 2021 — Present</span></div>
+          <div class="tl-company">Suvarna Technosoft Pvt. Ltd. · India</div>
+          <ul>
+            <li>Designed responsive web interfaces and visual layouts based on functional requirements and stakeholder input.</li>
+            <li>Created dashboard layouts, forms, navigation structures and reusable UI patterns for application workflows.</li>
+            <li>Worked closely with project managers and development teams to translate UI concepts into implemented interfaces.</li>
+            <li>Delivered three client engagements end-to-end: NFC (health-benefits), MRR (patient portal) and GROH (hospital marketing).</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Figma</span><span class="tag">HTML5 / CSS3</span><span class="tag">Bootstrap</span><span class="tag">PrimeNG</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <span class="eyebrow">Selected Work</span>
+    <h2 style="margin:14px 0 36px; font-size:1.9rem;">Three products, three very different users</h2>
+
+    <div class="project flagship">
+      <span class="flag-tag">Flagship project</span>
+      <div class="project-head">
+        <div>
+          <h3>NFC — Nuclear Fuel Complex Beneficiary Portal</h3>
+          <div class="project-domain">Employee Health Benefits / Insurance · UI/UX Designer</div>
+        </div>
+      </div>
+      <p class="desc">An employee and beneficiary health-benefits portal supporting dependent information, cashless medical treatment, empanelled hospitals, referral/approval workflows, and reimbursement.</p>
+      <div class="project-shots">
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg><span>Dashboard — screen coming soon</span></div>
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg><span>Beneficiary form — screen coming soon</span></div>
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg><span>Referral flow — screen coming soon</span></div>
+      </div>
+      <div class="project-tags"><span class="tag">Figma</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap 5</span><span class="tag">PrimeNG</span></div>
+      <ul class="points">
+        <li>Created dashboard layouts, color themes, forms, and beneficiary-management interfaces in Figma.</li>
+        <li>Converted approved designs into responsive interfaces using HTML5, CSS3, Bootstrap 5, and PrimeNG.</li>
+        <li>Designed clear form structures and validation states for healthcare workflows.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div>
+          <h3>MRR — Patient Portal</h3>
+          <div class="project-domain">Healthcare · UI/UX Designer</div>
+        </div>
+      </div>
+      <p class="desc">A patient-facing portal for digital access to hospital information — profiles, medical documents, case sheets, lab reports, bills, appointments, and video consultations.</p>
+      <div class="project-shots">
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg><span>Patient profile — screen coming soon</span></div>
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg><span>Lab reports — screen coming soon</span></div>
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg><span>Appointment booking — screen coming soon</span></div>
+      </div>
+      <div class="project-tags"><span class="tag">Figma</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span><span class="tag">PrimeNG</span></div>
+      <ul class="points">
+        <li>Designed registration, login, profile, and document-viewing experiences in Figma.</li>
+        <li>Created layouts for case sheets, medical documents, lab reports, and bills/receipts.</li>
+        <li>Designed appointment-booking and doctor-information screens for patients and family members.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <div>
+          <h3>GROH — Hospital Marketing Mobile Application</h3>
+          <div class="project-domain">Healthcare / Hospital Marketing · UI/UX Designer</div>
+        </div>
+      </div>
+      <p class="desc">A mobile app for hospital marketing operations — lead management, campaigns, referrals, field activities, visit planning, and user management.</p>
+      <div class="project-shots">
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><span>Lead dashboard — screen coming soon</span></div>
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><span>Visit planning — screen coming soon</span></div>
+        <div class="shot-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4E5F" stroke-width="1.5"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><span>Role-based nav — screen coming soon</span></div>
+      </div>
+      <div class="project-tags"><span class="tag">Figma</span></div>
+      <ul class="points">
+        <li>Created mobile-first user flows, wireframes, and high-fidelity screens entirely in Figma.</li>
+        <li>Designed role-based navigation, reports, activity history, and settings.</li>
+        <li>Focused on mobile usability, visual hierarchy, and efficient task completion.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <span class="eyebrow">Impact</span>
+    <h2 style="margin:14px 0 30px; font-size:1.9rem;">Key achievements</h2>
+    <div class="ach-grid">
+      <div class="ach-num-card"><div class="stat-num">3</div><div class="stat-label">Healthcare platforms designed</div></div>
+      <div class="ach-num-card"><div class="stat-num">5.8</div><div class="stat-label">Years of experience</div></div>
+      <div class="ach-num-card"><div class="stat-num">2021</div><div class="stat-label">Continuous tenure since</div></div>
+    </div>
+    <div class="ach-detail-grid">
+      <div class="ach-card">
+        <h4>Healthcare specialist</h4>
+        <p>Designed across three distinct healthcare domains — employee health-benefits/insurance, patient portals, and hospital-marketing operations.</p>
+      </div>
+      <div class="ach-card">
+        <h4>Design → build ownership</h4>
+        <p>Doesn't stop at handoff: converts approved Figma designs into responsive HTML5, CSS3, Bootstrap and PrimeNG interfaces personally.</p>
+      </div>
+      <div class="ach-card">
+        <h4>Stakeholder-first process</h4>
+        <p>Runs requirement analysis and stakeholder collaboration before wireframes, keeping healthcare workflows accurate from the start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <span class="eyebrow">Education</span>
+    <h2 style="margin:14px 0 24px; font-size:1.6rem;">Academic background</h2>
+    <ul class="edu-list">
+      <li>B.Tech — Computer Science Engineering, Nalanda Institute of Engineering &amp; Technology (affiliated to JNTUK)</li>
+      <li>Intermediate — Vasavi Junior College, Andhra Pradesh</li>
+      <li>Secondary Education — Sindhu High School, Andhra Pradesh</li>
+    </ul>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#F3D9A6;">Get in touch</span>
+    <h2 style="margin-top:14px;">Let's build something together.</h2>
+    <p class="lead2">Open to UI/UX Designer, Product Designer and UI Designer roles. Reach out directly, or review my work above first.</p>
+    <div class="footer-actions">
+      <a class="btn btn-amber" href="mailto:srikiranmotapothula@gmail.com">Email me</a>
+      <a class="btn btn-primary" href="Motapothula_Sai_Kiran_UIUX_Resume_Updated.docx" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+        Download resume
+      </a>
+      <a class="btn btn-ghost" style="border-color:#7FA3AC; color:#fff;" href="tel:+919393463756">Call me</a>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <div class="avatar">SK</div>
+          <div>
+            <b style="font-family:'Fraunces',serif; font-size:1rem; display:block; margin-bottom:4px;">Sai Kiran</b>
+            <p>UI/UX Designer designing accessible, consistent healthcare interfaces — from Figma to production.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:srikiranmotapothula@gmail.com">srikiranmotapothula@gmail.com</a></li>
+          <li><a href="tel:+919393463756">+91-9393463756</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Elsewhere</h5>
+        <ul>
+          <!-- Replace [GITHUB_URL] / [LINKEDIN_URL] with your real links, or delete a line you don't have yet -->
+          <li><a href="[GITHUB_URL]" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="[LINKEDIN_URL]" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Motapothula Sai Kiran</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Scroll progress bar
+const progressBar = document.getElementById('progress-bar');
+function updateProgress(){
+  const h = document.documentElement;
+  const scrolled = h.scrollTop;
+  const max = h.scrollHeight - h.clientHeight;
+  progressBar.style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+}
+document.addEventListener('scroll', updateProgress, { passive:true });
+updateProgress();
+
+// Custom cursor (desktop + motion-ok only, matched to the CSS media query above)
+const supportsCustomCursor = window.matchMedia('(hover:hover) and (pointer:fine)').matches
+  && window.matchMedia('(prefers-reduced-motion:no-preference)').matches;
+
+if (supportsCustomCursor) {
+  document.body.classList.add('cursor-ready');
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%,-50%)`;
+  });
+
+  function animateRing(){
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%,-50%)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button, .btn, .project, .toolkit-row, .ach-card').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+  });
+}
+</script>
+</body>
+</html>
